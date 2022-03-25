@@ -23,10 +23,23 @@
   padding-left: 16px;
   padding-right: 16px;
   color: white;
+  font-size: large;
 }
 
 input {
-  border: none;
+  outline: none;
+  border: solid 1.5px turquoise;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  line-height: 24px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  box-sizing: border-box;
+  background-color: rgba(38, 148, 137, 0.705);
+  color: white;
 }
 
 /*
@@ -62,7 +75,22 @@ input {
 ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝
 
 */
+
 .login_input {
+  margin-right: 10px;
+}
+
+/*
+██╗███╗   ██╗██╗████████╗██╗ █████╗ ██╗
+██║████╗  ██║██║╚══██╔══╝██║██╔══██╗██║
+██║██╔██╗ ██║██║   ██║   ██║███████║██║
+██║██║╚██╗██║██║   ██║   ██║██╔══██║██║
+██║██║ ╚████║██║   ██║   ██║██║  ██║███████╗
+╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝   ╚═╝╚═╝  ╚═╝╚══════╝
+
+*/
+
+.initial_input {
   border: solid 1.5px turquoise;
   margin-top: 5px;
   margin-bottom: 10px;
@@ -70,6 +98,24 @@ input {
   line-height: 24px;
 }
 
-.login_form_title {
+.initial_form_title {
   display: block;
+}
+
+/*
+███████╗ ██████╗  ██████╗ ████████╗███████╗██████╗
+██╔════╝██╔═══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔══██╗
+█████╗  ██║   ██║██║   ██║   ██║   █████╗  ██████╔╝
+██╔══╝  ██║   ██║██║   ██║   ██║   ██╔══╝  ██╔══██╗
+██║     ╚██████╔╝╚██████╔╝   ██║   ███████╗██║  ██║
+╚═╝      ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝
+
+*/
+
+.footer {
+  background-color: rgb(32, 138, 127);
+  color: white;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
 }

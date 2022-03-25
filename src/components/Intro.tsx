@@ -7,7 +7,10 @@ interface Props {
 export function Intro(props: Props) {
   return (
     <div className="intro_container">
-      Intro intro Don't show me the warning anymore thank you
+      <p>The theme of Earth Week and its meaning to IST</p>
+      <p>The need of decreasing CO2</p>
+      <p>Rule of this activity:</p>
+
       <button
         className="button intro_button"
         onClick={() => props.onHide(false)}
