@@ -1,11 +1,14 @@
 :root {
   --primary-color: turquoise;
-  --button-color: rgb(0, 139, 139);
-}
-
-.App {
-  text-align: center;
-  font-family: "Work Sans", sans-serif;
+  --bg-body: rgb(243, 243, 236);
+  --bg-button: rgb(0, 139, 139);
+  --bg-footer: rgb(32, 138, 127);
+  --bg-input: white;
+  --bg-intro: pink;
+  --bg-initial: rgb(201, 233, 230);
+  --bg-input-focus: rgba(38, 148, 137, 0.705);
+  --error-color: rgb(240, 97, 61);
+  --text-color: white;
 }
 
 .App-link {
@@ -20,31 +23,39 @@
 ██║     ╚██████╔╝██████╔╝███████╗██║╚██████╗
 ╚═╝      ╚═════╝ ╚═════╝ ╚══════╝╚═╝ ╚═════╝
 */
+
+body {
+  background-color: var(--bg-body);
+  text-align: center;
+  font-family: "Work Sans", sans-serif;
+}
+
 .button {
-  background-color: rgb(0, 139, 139);
+  background-color: var(--bg-button);
   border: none;
   border-radius: 10px;
   padding: 8px;
   padding-left: 16px;
   padding-right: 16px;
-  color: white;
+  color: var(--text-color);
   font-size: large;
 }
 
 input {
   outline: none;
-  border: solid 1.5px turquoise;
+  border: solid 1.5px var(--primary-color);
   margin-top: 5px;
   margin-bottom: 10px;
   border-radius: 5px;
   line-height: 24px;
   box-sizing: border-box;
+  background-color: var(--bg-input);
 }
 
 input:focus {
   box-sizing: border-box;
-  background-color: rgba(38, 148, 137, 0.705);
-  color: white;
+  background-color: var(--bg-input-focus);
+  color: var(--text-color);
 }
 
 input[type="radio"] {
@@ -58,7 +69,7 @@ input[type="radio"]:after {
   top: -2px;
   left: -1px;
   position: relative;
-  background-color: white;
+  background-color: var(--bg-input);
   content: "";
   display: inline-block;
   visibility: visible;
@@ -100,7 +111,7 @@ input[type="number"] {
 ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝
 */
 .intro_container {
-  background-color: pink;
+  background-color: var(--bg-intro);
   width: "100%";
   height: 200px;
   position: relative;
@@ -140,13 +151,13 @@ input[type="number"] {
 */
 
 .initial_container {
-  background-color: rgb(201, 233, 230);
+  background-color: var(--bg-initial);
   position: relative;
   height: 150px;
 }
 
 .initial_input {
-  border: solid 1.5px turquoise;
+  border: solid 1.5px var(--primary-color);
   margin-top: 5px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -161,7 +172,7 @@ input[type="number"] {
 
 .error {
   font-size: 14px;
-  color: rgb(240, 97, 61);
+  color: var(--error-color);
 }
 
 /*
@@ -191,7 +202,7 @@ input[type="number"] {
 */
 
 .footer {
-  background-color: rgb(32, 138, 127);
+  background-color: var(--bg-footer);
   color: white;
   position: fixed;
   bottom: 0px;
