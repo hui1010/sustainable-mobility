@@ -1,13 +1,10 @@
 import "./App.css";
-import { useState, useEffect } from "react";
-import { InitialScreen } from "./components/InitialScreen.tsx";
+import { useState } from "react";
 import { LoginScreen } from "./components/LoginScreen.tsx";
 import { Intro } from "./components/Intro.tsx";
-import { ResultScreen } from "./components/ResultScreen.tsx";
 
 function App() {
   const [showIntro, setShowIntro] = useState(true);
-  const [showLogin, setShowLogin] = useState(true);
 
   return (
     <div className="App">
@@ -16,15 +13,11 @@ function App() {
           ? "Good morning"
           : new Date().getHours() <= 18
           ? "Good afternoon"
-          : "Good evening"}{" "}
+          : "Good evening"}
+        &nbsp;and happy Earth Week!
       </h1>
       {showIntro && <Intro onHide={setShowIntro} />}
-      {showLogin && (
-        <>
-          <LoginScreen /> <InitialScreen showLogin={setShowLogin} />
-        </>
-      )}
-      {!showLogin && <ResultScreen />}
+      <LoginScreen />
       <div className="footer">
         <p>
           The final interpretation right of this event belongs to IST

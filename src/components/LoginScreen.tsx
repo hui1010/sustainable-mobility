@@ -1,19 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import { InitialScreen } from "./InitialScreen.tsx";
+import { ResultScreen } from "./ResultScreen.tsx";
 
 export function LoginScreen() {
+  const [showLogin, setShowLogin] = useState(true);
   return (
     <div className="login_container">
-      <h3 className="login_title">Eneter your name</h3>
-      <input className="login_input" type="text" />
-      <button
-        className="login_button button"
-        onClick={(e) => {
-          e.preventDefault();
-          console.log("ok");
-        }}
-      >
-        Ok
-      </button>
+      <InitialScreen showLogin={setShowLogin} />
+
+      {/* {!showLogin && <ResultScreen />} */}
     </div>
   );
 }

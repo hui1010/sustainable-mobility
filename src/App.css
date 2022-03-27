@@ -1,3 +1,8 @@
+:root {
+  --primary-color: turquoise;
+  --button-color: rgb(0, 139, 139);
+}
+
 .App {
   text-align: center;
   font-family: "Work Sans", sans-serif;
@@ -40,6 +45,50 @@ input:focus {
   box-sizing: border-box;
   background-color: rgba(38, 148, 137, 0.705);
   color: white;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+input[type="radio"]:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: white;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid var(--primary-color);
+}
+
+input[type="radio"]:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: var(--primary-color);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid var(--primary-color);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 /*
@@ -90,6 +139,12 @@ input:focus {
 
 */
 
+.initial_container {
+  background-color: rgb(201, 233, 230);
+  position: relative;
+  height: 150px;
+}
+
 .initial_input {
   border: solid 1.5px turquoise;
   margin-top: 5px;
@@ -98,8 +153,31 @@ input:focus {
   line-height: 24px;
 }
 
-.initial_form_title {
-  display: block;
+.initial_button {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+}
+
+.error {
+  font-size: 14px;
+  color: rgb(240, 97, 61);
+}
+
+/*
+██████╗ ███████╗███████╗██╗   ██╗██╗  ████████╗
+██╔══██╗██╔════╝██╔════╝██║   ██║██║  ╚══██╔══╝
+██████╔╝█████╗  ███████╗██║   ██║██║     ██║
+██╔══██╗██╔══╝  ╚════██║██║   ██║██║     ██║
+██║  ██║███████╗███████║╚██████╔╝███████╗██║
+╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝ ╚══════╝╚═╝
+*/
+.result_title::first-letter {
+  text-transform: uppercase;
+}
+
+.uppercase {
+  text-transform: capitalize;
 }
 
 /*
