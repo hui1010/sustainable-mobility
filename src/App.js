@@ -16,7 +16,23 @@ function App() {
           : "Good evening"}
         &nbsp;and happy Earth Week!
       </h1>
-      {showIntro && <Intro onHide={setShowIntro} />}
+      {showIntro ? (
+        <Intro onHide={setShowIntro} />
+      ) : (
+        <>
+          <div className="intro_blank">
+            <button
+              className="button intro_button"
+              onClick={(e) => {
+                e.preventDefault();
+                setShowIntro(true);
+              }}
+            >
+              Show Intro
+            </button>
+          </div>
+        </>
+      )}
       <LoginScreen />
       <div className="footer">
         <p>

@@ -9,7 +9,6 @@ interface Props {
 }
 
 export function InitialScreen(props: Props) {
-  const [name, setName] = useState("");
   const [distance, setDistance] = useState<number>(0);
   const [fuel, setFuel] = useState<FuelType>();
   const [errorMsg, setErrorMsg] = useState("");
@@ -38,16 +37,7 @@ export function InitialScreen(props: Props) {
       {/* <h2>First we need to collect some basic information</h2> */}
       <div className="initial_container">
         <div>
-          <label className="login_title">{"Name "}</label>
-          <input
-            className="login_input"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            readOnly={showResult}
-          />
-
-          <label>{"Distance (km)*"} </label>
+          <label>{"Travel distance (km)*"} </label>
           <input
             className="initial_input"
             type="number"
@@ -61,7 +51,7 @@ export function InitialScreen(props: Props) {
         </div>
 
         <div>
-          <label>Fuel*</label> <br />
+          <label>Travel method*</label> <br />
           {fuelStatistic.map((f: FuelType) => (
             <span key={f.fuel}>
               <input
@@ -86,15 +76,12 @@ export function InitialScreen(props: Props) {
       {showResult && (
         <>
           <h3 className="result_title">
-            {name ? name + "," : ""} your daily carbon dioxide emission is:{" "}
+            Your daily carbon dioxide emission is: {fuel.emission * distance} g
           </h3>
 
-          {distance * fuel.emission === 0 && (
+          {distance * fuel.emission === 0 ? (
             <div>
-              <h3>
-                Wow, you are an environment hero
-                <span className="uppercase">&nbsp;{name.trim()}</span>!
-              </h3>
+              <h3>Wow, you are an environment hero!</h3>
               <FontAwesomeIcon
                 icon={faStar}
                 size="5x"
@@ -104,6 +91,17 @@ export function InitialScreen(props: Props) {
               <p>
                 Keep on your good work! However, we have some info for you if
                 you wonder what the other fuels co2 emission is
+              </p>
+            </div>
+          ) : (
+            <div>
+              <p>That is in eqviallent to xx trees working xx days</p>
+              <p>Do you know that?</p>
+
+              <p>
+                {" "}
+                If you drive an electricity car, you would decrease your daily
+                emission by xx%{" "}
               </p>
             </div>
           )}
