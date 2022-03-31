@@ -94,15 +94,24 @@ export function InitialScreen(props: Props) {
               </p>
             </div>
           ) : (
-            <div>
+            <div className="result_container">
               <p>That is in eqviallent to xx trees working xx days</p>
               <p>Do you know that?</p>
 
-              <p>
-                {" "}
-                If you drive an electricity car, you would decrease your daily
-                emission by xx%{" "}
-              </p>
+              <div className="result">
+                Did you know that carpooling is a good way of reducing your
+                environmental impact? You can save 50% of carbon emissions per
+                person if there are two people in a car.
+              </div>
+              <div className="result">
+                Did you know that you can save 75% of emissions by taking the
+                train instead of the car?
+              </div>
+              <div className="result">
+                Did you know that you can save up to 90% of emissions if you
+                drive in an electric car compared to a benzin car? It would be
+                100% if the electricity came from renewable energy.
+              </div>
             </div>
           )}
         </>

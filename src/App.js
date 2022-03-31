@@ -14,7 +14,7 @@ function App() {
           : new Date().getHours() <= 18
           ? "Good afternoon"
           : "Good evening"}
-        &nbsp;and happy Earth Week!
+        &nbsp;and happy Sustainability Week 2022!
       </h1>
       {showIntro ? (
         <Intro onHide={setShowIntro} />
