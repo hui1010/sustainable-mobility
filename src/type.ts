@@ -18,3 +18,5 @@ export const fuelStatistic: Array<FuelType> = [
   { fuel: "bike", emission: 0 },
   { fuel: "walk", emission: 0 },
 ];
+
+export const regions = ["Sweden", "Denmark", "Norway", "Germany"];

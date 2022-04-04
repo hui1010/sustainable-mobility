@@ -3,16 +3,18 @@
   --bg-body: rgb(243, 243, 236);
   --bg-button: rgb(0, 139, 139);
   --bg-footer: rgb(32, 138, 127);
-  --bg-input: white;
+  --bg-input: rgb(245, 245, 245);
   --bg-intro: rgb(145, 229, 215);
   --bg-initial: rgb(201, 233, 230);
   --bg-input-focus: rgba(38, 148, 137, 0.705);
   --error-color: rgb(240, 97, 61);
-  --text-color: white;
+  --text-color: rgb(245, 245, 245);
 }
 
 .App-link {
   color: #61dafb;
+  overflow: scroll;
+  height: 100vh;
 }
 
 /*
@@ -103,6 +105,25 @@ input[type="number"] {
 }
 
 /*
+███████╗ ██████╗  ██████╗ ████████╗███████╗██████╗
+██╔════╝██╔═══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔══██╗
+█████╗  ██║   ██║██║   ██║   ██║   █████╗  ██████╔╝
+██╔══╝  ██║   ██║██║   ██║   ██║   ██╔══╝  ██╔══██╗
+██║     ╚██████╔╝╚██████╔╝   ██║   ███████╗██║  ██║
+╚═╝      ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝
+
+*/
+
+.footer {
+  background-color: var(--bg-footer);
+  color: white;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 80px;
+}
+
+/*
 ██╗███╗   ██╗████████╗██████╗  ██████╗
 ██║████╗  ██║╚══██╔══╝██╔══██╗██╔═══██╗
 ██║██╔██╗ ██║   ██║   ██████╔╝██║   ██║
@@ -113,7 +134,7 @@ input[type="number"] {
 .intro_container {
   background-color: var(--bg-intro);
   width: "100%";
-  height: 200px;
+
   position: relative;
   padding: 20px;
   margin-top: 20px;
@@ -181,6 +202,10 @@ input[type="number"] {
   color: var(--error-color);
 }
 
+.input {
+  margin: 10px 0;
+}
+
 /*
 ██████╗ ███████╗███████╗██╗   ██╗██╗  ████████╗
 ██╔══██╗██╔════╝██╔════╝██║   ██║██║  ╚══██╔══╝
@@ -197,33 +222,59 @@ input[type="number"] {
   text-transform: capitalize;
 }
 
-/*
-███████╗ ██████╗  ██████╗ ████████╗███████╗██████╗
-██╔════╝██╔═══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔══██╗
-█████╗  ██║   ██║██║   ██║   ██║   █████╗  ██████╔╝
-██╔══╝  ██║   ██║██║   ██║   ██║   ██╔══╝  ██╔══██╗
-██║     ╚██████╔╝╚██████╔╝   ██║   ███████╗██║  ██║
-╚═╝      ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝
-
-*/
-
-.footer {
-  background-color: var(--bg-footer);
-  color: white;
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
+.tips {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 200px;
+  margin-bottom: 100px;
 }
 
-.result_container {
-}
-
-.result {
+.tip {
   width: 200px;
   height: 150px;
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--bg-input-focus);
+  color: var(--text-color);
   margin: auto;
-  padding: 5px;
-  border: 5px whitesmoke solid;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: -2px -1px 15px 7px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -3px -2px 30px 14px rgba(0, 0, 0, 0.425);
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.23);
+}
+
+/* flip */
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front {
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
 }

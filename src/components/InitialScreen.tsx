@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { SetStateAction, useState, MouseEvent } from "react";
-import { fuelStatistic, FuelType } from "../type.ts";
+import { fuelStatistic, FuelType, regions } from "../type.ts";
 import { ResultScreen } from "./ResultScreen.tsx";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar, faWarning } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
   showLogin: React.Dispatch<SetStateAction<boolean>>;
@@ -10,6 +10,7 @@ interface Props {
 
 export function InitialScreen(props: Props) {
   const [distance, setDistance] = useState<number>(0);
+  const [region, setRegion] = useState("");
   const [fuel, setFuel] = useState<FuelType>();
   const [errorMsg, setErrorMsg] = useState("");
   const [showResult, setShowResult] = useState(false);
@@ -28,21 +29,23 @@ export function InitialScreen(props: Props) {
       setErrorMsg("Don't forget to choose fuel");
       return;
     }
+    if (distance < 0) {
+      setErrorMsg("Distance can't be negative");
+      return;
+    }
     setErrorMsg("");
     setShowResult(!showResult);
   };
 
   return (
-    <div>
-      {/* <h2>First we need to collect some basic information</h2> */}
+    <>
       <div className="initial_container">
-        <div>
+        <div className="input">
           <label>{"Travel distance (km)*"} </label>
           <input
             className="initial_input"
             type="number"
             value={distance === 0 ? "" : distance}
-            // TODO: remove the placeholder 0
             onChange={(e) => {
               setDistance(Number(e.target.value));
             }}
@@ -50,8 +53,23 @@ export function InitialScreen(props: Props) {
           />
         </div>
 
-        <div>
-          <label>Travel method*</label> <br />
+        <div className="input">
+          <label>Region* </label>
+          {regions.map((r) => (
+            <span key={r}>
+              <input
+                type="radio"
+                name="region"
+                value={region}
+                onChange={() => setRegion(r)}
+              />
+              <label>{r} </label>
+            </span>
+          ))}
+        </div>
+
+        <div className="input">
+          <label>Travel method* </label>
           {fuelStatistic.map((f: FuelType) => (
             <span key={f.fuel}>
               <input
@@ -68,7 +86,15 @@ export function InitialScreen(props: Props) {
             </span>
           ))}
         </div>
-        <p className="error">{errorMsg}</p>
+
+        {errorMsg && (
+          <>
+            {" "}
+            <p className="error">
+              <FontAwesomeIcon icon={faWarning} /> {errorMsg}
+            </p>
+          </>
+        )}
         <button className="button initial_button" onClick={onShowReult}>
           {showResult ? "Edit" : "Show my result"}
         </button>
@@ -76,7 +102,8 @@ export function InitialScreen(props: Props) {
       {showResult && (
         <>
           <h3 className="result_title">
-            Your daily carbon dioxide emission is: {fuel.emission * distance} g
+            Your daily carbon dioxide emission is:{" "}
+            {fuel.emission * distance * 2} g
           </h3>
 
           {distance * fuel.emission === 0 ? (
@@ -94,28 +121,43 @@ export function InitialScreen(props: Props) {
               </p>
             </div>
           ) : (
-            <div className="result_container">
+            <>
               <p>That is in eqviallent to xx trees working xx days</p>
               <p>Do you know that?</p>
-
-              <div className="result">
-                Did you know that carpooling is a good way of reducing your
-                environmental impact? You can save 50% of carbon emissions per
-                person if there are two people in a car.
-              </div>
-              <div className="result">
-                Did you know that you can save 75% of emissions by taking the
-                train instead of the car?
-              </div>
-              <div className="result">
-                Did you know that you can save up to 90% of emissions if you
-                drive in an electric car compared to a benzin car? It would be
-                100% if the electricity came from renewable energy.
+            </>
+          )}
+          <div className="tips">
+            <div className="tip flip-card">
+              <div className="flip-card-inner">
+                <div className="flip-card-front">Car pooling</div>
+                <div className="flip-card-back">
+                  You can save 50% of carbon emissions per person if there are
+                  two people in a car.
+                </div>
               </div>
             </div>
-          )}
+            <div className="tip flip-card">
+              <div className="flip-card-inner">
+                <div className="flip-card-front">Public transport</div>
+                <div className="flip-card-back">
+                  You can save 75% of emissions by taking the train instead of
+                  the car traveling the same distance
+                </div>
+              </div>
+            </div>
+            <div className="tip flip-card">
+              <div className="flip-card-inner">
+                <div className="flip-card-front">Fuel</div>
+                <div className="flip-card-back">
+                  You can save up to 90% of emissions if you drive in an
+                  electric car compared to a benzin car. It would be 100% if the
+                  electricity came from renewable energy.
+                </div>
+              </div>
+            </div>
+          </div>
         </>
       )}
-    </div>
+    </>
   );
 }
