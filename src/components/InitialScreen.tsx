@@ -43,7 +43,6 @@ export function InitialScreen(props: Props) {
         <div className="input">
           <label>{"Travel distance (km)*"} </label>
           <input
-            className="initial_input"
             type="number"
             value={distance === 0 ? "" : distance}
             onChange={(e) => {
@@ -63,7 +62,7 @@ export function InitialScreen(props: Props) {
                 value={region}
                 onChange={() => setRegion(r)}
               />
-              <label>{r} </label>
+              <span>{r} </span>
             </span>
           ))}
         </div>
@@ -79,10 +78,10 @@ export function InitialScreen(props: Props) {
                 onChange={() => setFuel(f)}
                 disabled={showResult}
               />
-              <label>
+              <span>
                 {f.fuel}
                 {"   "}
-              </label>
+              </span>
             </span>
           ))}
         </div>

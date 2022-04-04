@@ -1,6 +1,6 @@
 :root {
   --primary-color: turquoise;
-  --bg-body: rgb(243, 243, 236);
+  --bg-body: rgb(233, 245, 238);
   --bg-button: rgb(0, 139, 139);
   --bg-footer: rgb(32, 138, 127);
   --bg-input: rgb(245, 245, 245);
@@ -46,8 +46,7 @@ body {
 input {
   outline: none;
   border: solid 1.5px var(--primary-color);
-  margin-top: 5px;
-  margin-bottom: 10px;
+
   border-radius: 5px;
   line-height: 24px;
   box-sizing: border-box;
@@ -178,17 +177,18 @@ input[type="number"] {
 */
 
 .initial_container {
-  background-color: var(--bg-initial);
+  /* background-color: var(--bg-initial); */
   position: relative;
   height: 150px;
+  text-align: left;
+  padding: 20px;
+  border-top: var(--bg-initial) solid 2px;
+  border-bottom: var(--bg-initial) solid 2px;
 }
 
-.initial_input {
-  border: solid 1.5px var(--primary-color);
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  line-height: 24px;
+.initial_container label {
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .initial_button {
@@ -204,6 +204,7 @@ input[type="number"] {
 
 .input {
   margin: 10px 0;
+  height: 30px;
 }
 
 /*
