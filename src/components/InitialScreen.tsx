@@ -126,28 +126,28 @@ export function InitialScreen(props: Props) {
             </>
           )}
           <div className="tips">
-            <div className="tip flip-card">
-              <div className="flip-card-inner">
-                <div className="flip-card-front">Car pooling</div>
-                <div className="flip-card-back">
+            <div className="tip">
+              <div>
+                <div>Car pooling</div>
+                <div>
                   You can save 50% of carbon emissions per person if there are
                   two people in a car.
                 </div>
               </div>
             </div>
-            <div className="tip flip-card">
-              <div className="flip-card-inner">
-                <div className="flip-card-front">Public transport</div>
-                <div className="flip-card-back">
+            <div className="tip">
+              <div>
+                <div>Public transport</div>
+                <div>
                   You can save 75% of emissions by taking the train instead of
                   the car traveling the same distance
                 </div>
               </div>
             </div>
-            <div className="tip flip-card">
-              <div className="flip-card-inner">
-                <div className="flip-card-front">Fuel</div>
-                <div className="flip-card-back">
+            <div className="tip">
+              <div>
+                <div>Fuel</div>
+                <div>
                   You can save up to 90% of emissions if you drive in an
                   electric car compared to a benzin car. It would be 100% if the
                   electricity came from renewable energy.
