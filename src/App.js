@@ -1,38 +1,9 @@
 import "./App.css";
-import { useState } from "react";
 import { LoginScreen } from "./components/LoginScreen.tsx";
-import { Intro } from "./components/Intro.tsx";
 
 function App() {
-  const [showIntro, setShowIntro] = useState(true);
-
   return (
     <div className="App">
-      <h1>
-        {new Date().getHours() <= 12
-          ? "Good morning"
-          : new Date().getHours() <= 18
-          ? "Good afternoon"
-          : "Good evening"}
-        &nbsp;and happy Sustainability Week 2022!
-      </h1>
-      {showIntro ? (
-        <Intro onHide={setShowIntro} />
-      ) : (
-        <>
-          <div className="intro_blank">
-            <button
-              className="button intro_button"
-              onClick={(e) => {
-                e.preventDefault();
-                setShowIntro(true);
-              }}
-            >
-              Show Intro
-            </button>
-          </div>
-        </>
-      )}
       <LoginScreen />
       <div className="footer">
         <p>
