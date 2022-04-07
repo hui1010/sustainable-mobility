@@ -3,7 +3,7 @@ import { InitialScreen } from "./InitialScreen.tsx";
 
 export function LoginScreen() {
   return (
-    <div className="login_container">
+    <div className="login-container">
       <InitialScreen />
     </div>
   );

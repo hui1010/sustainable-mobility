@@ -19,4 +19,14 @@ export const fuelStatistic: Array<FuelType> = [
   { fuel: "walk", emission: 0 },
 ];
 
+export const fuelArr: Array<Record<string, number>> = [
+  { bensin: 181 },
+  { diesel: 0 },
+  { electricity: 45 },
+  { bus: 27 },
+  { train: 45 },
+  { bike: 0 },
+  { walk: 0 },
+];
+
 export const regions = ["Sweden", "Denmark", "Norway", "Germany"];

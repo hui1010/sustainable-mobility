@@ -17,6 +17,10 @@
   height: 100vh;
 }
 
+.App {
+  background-color: transparent;
+}
+
 /*
 ██████╗ ██╗   ██╗██████╗ ██╗     ██╗ ██████╗
 ██╔══██╗██║   ██║██╔══██╗██║     ██║██╔════╝
@@ -122,6 +126,11 @@ input[type="number"] {
   height: 80px;
 }
 
+.login-container {
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
 /*
 ██╗███╗   ██╗████████╗██████╗  ██████╗
 ██║████╗  ██║╚══██╔══╝██╔══██╗██╔═══██╗
@@ -130,40 +139,22 @@ input[type="number"] {
 ██║██║ ╚████║   ██║   ██║  ██║╚██████╔╝
 ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝
 */
-.intro_container {
-  background-color: var(--bg-intro);
+.intro-container {
   width: "100%";
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  height: 400px;
+}
 
-  position: relative;
+.intro-text {
+  margin-right: 20px;
+  text-align: right;
+}
+
+.intro-image {
   padding: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.intro_blank {
-  width: "100%";
-  height: 50px;
-  position: relative;
-}
-
-.intro_button {
-  position: absolute;
-  right: 40px;
-  bottom: 20px;
-}
-
-/*
-██╗      ██████╗  ██████╗ ██╗███╗   ██╗
-██║     ██╔═══██╗██╔════╝ ██║████╗  ██║
-██║     ██║   ██║██║  ███╗██║██╔██╗ ██║
-██║     ██║   ██║██║   ██║██║██║╚██╗██║
-███████╗╚██████╔╝╚██████╔╝██║██║ ╚████║
-╚══════╝ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝
-
-*/
-
-.login_input {
-  margin-right: 10px;
+  background-color: var(--bg-input-focus);
 }
 
 /*
@@ -176,14 +167,33 @@ input[type="number"] {
 
 */
 
-.initial_container {
-  /* background-color: var(--bg-initial); */
+.initial-container {
+  width: "80%";
+  margin: 50px;
+  height: 250px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -webkit-box-shadow: -2px -1px 15px 7px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -3px -2px 30px 14px rgba(0, 0, 0, 0.425);
+  box-shadow: 1px 1px 5px 4px rgba(150, 148, 148, 0.23);
+  overflow: hidden;
   position: relative;
-  height: 150px;
-  text-align: left;
-  padding: 20px;
-  border-top: var(--bg-initial) solid 2px;
-  border-bottom: var(--bg-initial) solid 2px;
+}
+
+.initial-header {
+  padding: 0;
+  margin: 0;
+  background-color: var(--bg-initial);
+  color: var(--text-color);
+  font-size: 18px;
+  line-height: 36px;
+}
+
+.initial-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .initial_container label {
@@ -193,8 +203,7 @@ input[type="number"] {
 
 .initial_button {
   position: absolute;
-  right: 20px;
-  bottom: 15px;
+  bottom: 20px;
 }
 
 .error {
@@ -215,13 +224,6 @@ input[type="number"] {
 ██║  ██║███████╗███████║╚██████╔╝███████╗██║
 ╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝ ╚══════╝╚═╝
 */
-.result_title::first-letter {
-  text-transform: uppercase;
-}
-
-.uppercase {
-  text-transform: capitalize;
-}
 
 .tips {
   display: grid;
@@ -241,4 +243,15 @@ input[type="number"] {
   -webkit-box-shadow: -2px -1px 15px 7px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: -3px -2px 30px 14px rgba(0, 0, 0, 0.425);
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.23);
+}
+
+.options {
+  height: 100px;
+  width: 100px;
+  background-color: pink;
+}
+.my-dropdown {
+  height: 200px;
+  width: 200px;
+  background-color: rgb(167, 43, 64);
 }
