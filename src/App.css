@@ -9,6 +9,9 @@
   --bg-input-focus: rgba(38, 148, 137, 0.705);
   --error-color: rgb(240, 97, 61);
   --text-color: rgb(245, 245, 245);
+  --column1: rgba(169, 194, 136, 0.705);
+  --column2: rgba(148, 201, 150, 0.1);
+  --column3: rgba(237, 244, 244, 0.1);
 }
 
 .App-link {
@@ -18,7 +21,15 @@
 }
 
 .App {
-  background-color: transparent;
+  background: repeating-linear-gradient(
+    to right,
+    var(--bg-input),
+    var(--bg-input) 30px,
+    var(--column3) 10px,
+    var(--column3) 100px
+  );
+  overflow: scroll;
+  height: 100vh;
 }
 
 /*
@@ -33,7 +44,7 @@
 body {
   background-color: var(--bg-body);
   text-align: center;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .button {
@@ -47,20 +58,17 @@ body {
   font-size: large;
 }
 
-input {
+input,
+.dropdown-box {
+  display: block;
   outline: none;
   border: solid 1.5px var(--primary-color);
-
   border-radius: 5px;
   line-height: 24px;
   box-sizing: border-box;
   background-color: var(--bg-input);
-}
-
-input:focus {
-  box-sizing: border-box;
-  background-color: var(--bg-input-focus);
-  color: var(--text-color);
+  height: 30px;
+  width: 200px;
 }
 
 input[type="radio"] {
@@ -168,7 +176,6 @@ input[type="number"] {
 */
 
 .initial-container {
-  width: "80%";
   margin: 50px;
   height: 250px;
   border-top-right-radius: 25px;
@@ -178,17 +185,18 @@ input[type="number"] {
   -webkit-box-shadow: -2px -1px 15px 7px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: -3px -2px 30px 14px rgba(0, 0, 0, 0.425);
   box-shadow: 1px 1px 5px 4px rgba(150, 148, 148, 0.23);
-  overflow: hidden;
   position: relative;
 }
 
 .initial-header {
   padding: 0;
   margin: 0;
-  background-color: var(--bg-initial);
+  background-color: var(--bg-button);
   color: var(--text-color);
   font-size: 18px;
   line-height: 36px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
 }
 
 .initial-inputs {
@@ -196,14 +204,26 @@ input[type="number"] {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.initial_container label {
-  font-weight: bold;
+.input label {
+  display: block;
   font-size: 18px;
+  margin: 5px auto;
+  margin-top: 20px;
 }
 
-.initial_button {
+.input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.initial-button {
   position: absolute;
   bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  align-self: center;
 }
 
 .error {
@@ -211,9 +231,46 @@ input[type="number"] {
   color: var(--error-color);
 }
 
-.input {
-  margin: 10px 0;
-  height: 30px;
+.options {
+  border: 1px solid rgb(201, 199, 199);
+  border-top-width: 0;
+  position: absolute;
+  width: 200px;
+  top: 30px;
+  z-index: 10;
+  background-color: azure;
+  box-sizing: border-box;
+  height: 120px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow-y: scroll;
+}
+
+.option {
+  height: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: left;
+  border-bottom: 1px dotted rgb(219, 245, 245);
+}
+
+.option:hover {
+  background-color: aqua !important;
+}
+
+.my-dropdown {
+  position: relative;
+}
+
+.dropdown-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /*
@@ -225,33 +282,51 @@ input[type="number"] {
 ╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝ ╚══════╝╚═╝
 */
 
+.result-upper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  height: 200px;
+  padding: 0 100px;
+}
+
+.result-image {
+  background-color: var(--bg-initial);
+}
+
+.result-tip-header {
+  text-align: center;
+  font-size: 22px;
+}
+
 .tips {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 0 200px;
   margin-bottom: 100px;
+  gap: 80px;
 }
 
 .tip {
-  width: 200px;
-  height: 150px;
-  background-color: var(--bg-input-focus);
-  color: var(--text-color);
-  margin: auto;
-  padding: 10px;
+  width: 250px;
+  height: 200px;
   border-radius: 10px;
   -webkit-box-shadow: -2px -1px 15px 7px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: -3px -2px 30px 14px rgba(0, 0, 0, 0.425);
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.23);
+  overflow: hidden;
 }
 
-.options {
-  height: 100px;
-  width: 100px;
-  background-color: pink;
+.tip p {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 0;
+  background-color: var(--bg-input-focus);
+  color: var(--text-color);
+  text-align: center;
+  font-size: 18px;
 }
-.my-dropdown {
-  height: 200px;
-  width: 200px;
-  background-color: rgb(167, 43, 64);
+.tip div {
+  padding: 10px;
+  text-align: left;
 }

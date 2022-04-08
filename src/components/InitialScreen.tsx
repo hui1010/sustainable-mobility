@@ -38,6 +38,7 @@ export function InitialScreen() {
     <>
       <div className="intro-container">
         <div className="intro-text">
+          <h1>Sustainability week 2022</h1>
           <p>
             In this time of the year we in sustainable expert group in IST wants
             to provide you more environment related tips to help you to live a
@@ -69,7 +70,7 @@ export function InitialScreen() {
         <h3 className="initial-header">Calculate your emission</h3>
         <div className="initial-inputs">
           <div className="input">
-            <label>{"Travel distance (km)*"} </label>
+            <label>{"How far do you travel (km)*"} </label>
             <input
               type="number"
               value={distance === 0 ? "" : distance}
@@ -81,38 +82,12 @@ export function InitialScreen() {
           </div>
 
           <div className="input">
-            <label>Region* </label>
-            {/* {regions.map((r) => (
-              <span key={r}>
-                <input
-                  type="radio"
-                  name="region"
-                  value={region}
-                  onChange={() => setRegion(r)}
-                />
-                <span>{r} </span>
-              </span>
-            ))} */}
+            <label>Where do you travel* </label>
             <MyDropDown options={regions} value={region} onChange={setRegion} />
           </div>
 
           <div className="input">
-            <label>Travel method* </label>
-            {/* {fuelStatistic.map((f: FuelType) => (
-              <span key={f.fuel}>
-                <input
-                  value={f.fuel}
-                  type="radio"
-                  name="fuel"
-                  onChange={() => setFuel(f)}
-                  disabled={showResult}
-                />
-                <span>
-                  {f.fuel}
-                  {"   "}
-                </span>
-              </span>
-            ))} */}
+            <label>How do you travel* </label>
             <MyDropDown
               options={fuelStatistic.map((f: FuelType) => f.fuel)}
               value={fuel}
@@ -128,68 +103,63 @@ export function InitialScreen() {
             </p>
           </>
         )}
-        <button className="button initial_button" onClick={onShowReult}>
+        <button className="button initial-button" onClick={onShowReult}>
           {showResult ? "Edit" : "Show my result"}
         </button>
       </div>
       {showResult && (
-        <>
-          <h3 className="result_title">
-            Your daily carbon dioxide emission is:{" "}
-            {fuelArr[fuel] * distance * 2} g
-          </h3>
-
-          {distance * fuelArr[fuel] === 0 ? (
-            <div>
-              <h3>Wow, you are an environment hero!</h3>
-              <FontAwesomeIcon
-                icon={faStar}
-                size="5x"
-                beatFade
-                color="#ffdf00"
-              />
-              <p>
-                Keep on your good work! However, we have some info for you if
-                you wonder what the other fuels co2 emission is
+        <div className="result-container">
+          <div className="result-upper">
+            <div className="result-image"></div>
+            <div className="result-text">
+              <h3 className="result-text-title">Your results are:</h3>
+              <p className="result-content">
+                Your daily carbon dioxide emission is:{" "}
+                {fuelArr[fuel] * distance * 2} g
               </p>
+
+              {distance * fuelArr[fuel] === 0 ? (
+                <div>
+                  <FontAwesomeIcon
+                    icon={faStar}
+                    size="5x"
+                    beatFade
+                    color="#ffdf00"
+                  />
+                </div>
+              ) : (
+                <>
+                  <p>That is in eqviallent to xx trees working xx days</p>
+                </>
+              )}
             </div>
-          ) : (
-            <>
-              <p>That is in eqviallent to xx trees working xx days</p>
-              <p>Do you know that?</p>
-            </>
-          )}
+          </div>
+          <h1 className="result-tip-header">Do you know that?</h1>
           <div className="tips">
             <div className="tip">
+              <p>Car pooling</p>
               <div>
-                <div>Car pooling</div>
-                <div>
-                  You can save 50% of carbon emissions per person if there are
-                  two people in a car.
-                </div>
+                You can save 50% of carbon emissions per person if there are two
+                people in a car.
               </div>
             </div>
             <div className="tip">
+              <p>Public transport</p>
               <div>
-                <div>Public transport</div>
-                <div>
-                  You can save 75% of emissions by taking the train instead of
-                  the car traveling the same distance
-                </div>
+                You can save 75% of emissions by taking the train instead of the
+                car traveling the same distance
               </div>
             </div>
             <div className="tip">
+              <p>Fuel</p>
               <div>
-                <div>Fuel</div>
-                <div>
-                  You can save up to 90% of emissions if you drive in an
-                  electric car compared to a benzin car. It would be 100% if the
-                  electricity came from renewable energy.
-                </div>
+                You can save up to 90% of emissions if you drive in an electric
+                car compared to a benzin car. It would be 100% if the
+                electricity came from renewable energy.
               </div>
             </div>
           </div>
-        </>
+        </div>
       )}
     </>
   );
