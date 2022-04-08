@@ -67,42 +67,49 @@ export function InitialScreen() {
         <div className="intro-image"></div>
       </div>
       <div className="initial-container">
-        <h3 className="initial-header">Calculate your emission</h3>
-        <div className="initial-inputs">
-          <div className="input">
-            <label>{"How far do you travel (km)*"} </label>
-            <input
-              type="number"
-              value={distance === 0 ? "" : distance}
-              onChange={(e) => {
-                setDistance(Number(e.target.value));
-              }}
-              readOnly={showResult}
-            />
+        <div className="initial-upper">
+          <h3 className="initial-header">Calculate your emission</h3>
+          <div className="initial-inputs">
+            <div className="input">
+              <label>{"How far do you travel (km)*"} </label>
+              <input
+                type="number"
+                value={distance === 0 ? "" : distance}
+                onChange={(e) => {
+                  setDistance(Number(e.target.value));
+                }}
+                readOnly={showResult}
+              />
+            </div>
+
+            <div className="input">
+              <label>Where do you travel* </label>
+              <MyDropDown
+                options={regions}
+                value={region}
+                onChange={setRegion}
+              />
+            </div>
+
+            <div className="input">
+              <label>How do you travel* </label>
+              <MyDropDown
+                options={fuelStatistic.map((f: FuelType) => f.fuel)}
+                value={fuel}
+                onChange={setFuel}
+              />
+            </div>
           </div>
 
-          <div className="input">
-            <label>Where do you travel* </label>
-            <MyDropDown options={regions} value={region} onChange={setRegion} />
-          </div>
-
-          <div className="input">
-            <label>How do you travel* </label>
-            <MyDropDown
-              options={fuelStatistic.map((f: FuelType) => f.fuel)}
-              value={fuel}
-              onChange={setFuel}
-            />
-          </div>
+          {errorMsg && (
+            <>
+              <p className="error">
+                <FontAwesomeIcon icon={faWarning} /> {errorMsg}
+              </p>
+            </>
+          )}
         </div>
 
-        {errorMsg && (
-          <>
-            <p className="error">
-              <FontAwesomeIcon icon={faWarning} /> {errorMsg}
-            </p>
-          </>
-        )}
         <button className="button initial-button" onClick={onShowReult}>
           {showResult ? "Edit" : "Show my result"}
         </button>
@@ -112,7 +119,7 @@ export function InitialScreen() {
           <div className="result-upper">
             <div className="result-image"></div>
             <div className="result-text">
-              <h3 className="result-text-title">Your results are:</h3>
+              <h2 className="result-text-title">Your results are:</h2>
               <p className="result-content">
                 Your daily carbon dioxide emission is:{" "}
                 {fuelArr[fuel] * distance * 2} g

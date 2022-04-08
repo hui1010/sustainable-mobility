@@ -1,8 +1,10 @@
 :root {
-  --primary-color: turquoise;
+  --primary-color: rgb(104, 224, 64);
   --bg-body: rgb(233, 245, 238);
-  --bg-button: rgb(0, 139, 139);
-  --bg-footer: rgb(32, 138, 127);
+  /* --bg-button: rgb(0, 139, 139); */
+  --bg-button: rgb(84, 177, 70);
+  /* --bg-footer: rgb(32, 138, 127); */
+  --bg-footer: rgba(35, 141, 83, 0.9);
   --bg-input: rgb(245, 245, 245);
   --bg-intro: rgb(145, 229, 215);
   --bg-initial: rgb(201, 233, 230);
@@ -10,8 +12,9 @@
   --error-color: rgb(240, 97, 61);
   --text-color: rgb(245, 245, 245);
   --column1: rgba(169, 194, 136, 0.705);
-  --column2: rgba(148, 201, 150, 0.1);
   --column3: rgba(237, 244, 244, 0.1);
+  /* --gray: rgb(201, 199, 199); */
+  --gray: rgba(150, 148, 148, 0.23);
 }
 
 .App-link {
@@ -62,52 +65,13 @@ input,
 .dropdown-box {
   display: block;
   outline: none;
-  border: solid 1.5px var(--primary-color);
+  border: solid 1.5px var(--gray);
   border-radius: 5px;
   line-height: 24px;
   box-sizing: border-box;
   background-color: var(--bg-input);
   height: 30px;
   width: 200px;
-}
-
-input[type="radio"] {
-  margin-right: 10px;
-}
-
-input[type="radio"]:after {
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
-  top: -2px;
-  left: -1px;
-  position: relative;
-  background-color: var(--bg-input);
-  content: "";
-  display: inline-block;
-  visibility: visible;
-  border: 2px solid var(--primary-color);
-}
-
-input[type="radio"]:checked:after {
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
-  top: -2px;
-  left: -1px;
-  position: relative;
-  background-color: var(--primary-color);
-  content: "";
-  display: inline-block;
-  visibility: visible;
-  border: 2px solid var(--primary-color);
-}
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 
 /* Firefox */
@@ -184,8 +148,11 @@ input[type="number"] {
   border-bottom-left-radius: 10px;
   -webkit-box-shadow: -2px -1px 15px 7px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: -3px -2px 30px 14px rgba(0, 0, 0, 0.425);
-  box-shadow: 1px 1px 5px 4px rgba(150, 148, 148, 0.23);
-  position: relative;
+  box-shadow: 1px 1px 3px 2px var(--gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
 }
 
 .initial-header {
@@ -219,7 +186,6 @@ input[type="number"] {
 }
 
 .initial-button {
-  position: absolute;
   bottom: 20px;
   padding-left: 30px;
   padding-right: 30px;
@@ -232,7 +198,7 @@ input[type="number"] {
 }
 
 .options {
-  border: 1px solid rgb(201, 199, 199);
+  border: 1px solid var(--gray);
   border-top-width: 0;
   position: absolute;
   width: 200px;
@@ -310,10 +276,13 @@ input[type="number"] {
 .tip {
   width: 250px;
   height: 200px;
-  border-radius: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   -webkit-box-shadow: -2px -1px 15px 7px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: -3px -2px 30px 14px rgba(0, 0, 0, 0.425);
-  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.23);
+  box-shadow: 1px 1px 2px 1px var(--gray);
   overflow: hidden;
 }
 
@@ -321,12 +290,12 @@ input[type="number"] {
   padding-top: 5px;
   padding-bottom: 5px;
   margin: 0;
-  background-color: var(--bg-input-focus);
+  background-color: var(--bg-button);
   color: var(--text-color);
   text-align: center;
   font-size: 18px;
 }
 .tip div {
-  padding: 10px;
+  padding: 20px;
   text-align: left;
 }
