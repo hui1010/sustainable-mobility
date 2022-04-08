@@ -14,16 +14,8 @@ export function InitialScreen() {
 
   const onShowReult = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if (!distance && !fuel) {
-      setErrorMsg("You need to fill in the Distance and choose a fuel type");
-      return;
-    }
-    if (!distance) {
-      setErrorMsg("Don't forget to fill in Distance");
-      return;
-    }
-    if (!fuel) {
-      setErrorMsg("Don't forget to choose fuel");
+    if (!distance && !fuel && !region) {
+      setErrorMsg("You need to fill in all fields");
       return;
     }
     if (distance < 0) {
