@@ -4,6 +4,7 @@ import { fuelStatistic, FuelType, regions, fuelArr } from "../type.ts";
 import { faStar, faWarning } from "@fortawesome/free-solid-svg-icons";
 import "react-dropdown/style.css";
 import { MyDropDown } from "./MyDropDown.tsx";
+import { PersonalInfo, Plan, Process, Town } from "../svg";
 
 export function InitialScreen() {
   const [distance, setDistance] = useState<number>(0);
@@ -56,7 +57,9 @@ export function InitialScreen() {
           </p>
           <p>Note: the data you enter wll not be saved anywehere by any mean</p>
         </div>
-        <div className="intro-image"></div>
+        <div className="intro-image">
+          <img src={Town} alt="header" />
+        </div>
       </div>
       <div className="initial-container">
         <div className="initial-upper">
@@ -109,7 +112,11 @@ export function InitialScreen() {
       {showResult && (
         <div className="result-container">
           <div className="result-upper">
-            <div className="result-image"></div>
+            <div className="result-image">
+              {/* <img src={Plan} alt="header" /> */}
+              <img src={PersonalInfo} alt="header" />
+              {/* <img src={Process} alt="header" /> */}
+            </div>
             <div className="result-text">
               <h2 className="result-text-title">Your results are:</h2>
               <p className="result-content">
@@ -123,7 +130,7 @@ export function InitialScreen() {
                     icon={faStar}
                     size="5x"
                     beatFade
-                    color="#ffdf00"
+                    color="#ffde00"
                   />
                 </div>
               ) : (
