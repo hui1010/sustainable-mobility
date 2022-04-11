@@ -83,6 +83,7 @@ export function InitialScreen() {
                 options={regions}
                 value={region}
                 onChange={setRegion}
+                clickable={!showResult}
               />
             </div>
 
@@ -92,6 +93,7 @@ export function InitialScreen() {
                 options={fuelStatistic.map((f: FuelType) => f.fuel)}
                 value={fuel}
                 onChange={setFuel}
+                clickable={!showResult}
               />
             </div>
           </div>

@@ -13,7 +13,7 @@
   --error-color: rgb(240, 97, 61);
   --text-color: rgb(245, 245, 245);
   --column1: rgba(169, 194, 136, 0.705);
-  --column3: rgba(237, 244, 244, 0.1);
+  --column3: rgba(184, 225, 226, 0.386);
   /* --gray: rgb(201, 199, 199); */
   --gray: rgba(150, 148, 148, 0.23);
   --yellow: #ffdf00;
@@ -25,16 +25,16 @@
   height: 100vh;
 }
 
-.App {
+html {
   background: repeating-linear-gradient(
     to right,
     var(--bg-input),
     var(--bg-input) 30px,
-    var(--column3) 10px,
-    var(--column3) 100px
+    var(--bg-body) 10px,
+    var(--bg-body) 100px
   );
-  overflow: scroll;
-  height: 100vh;
+  min-width: 400px;
+  padding-bottom: 100px;
 }
 
 /*
@@ -47,9 +47,11 @@
 */
 
 body {
-  background-color: var(--bg-body);
   text-align: center;
   font-family: "Roboto", sans-serif;
+  overflow: scroll;
+  width: 75vw;
+  margin: 0 auto;
 }
 
 .button {
@@ -98,13 +100,16 @@ input[type="number"]::-webkit-outer-spin-button {
   color: white;
   position: fixed;
   bottom: 0px;
-  width: 100%;
+  left: 0;
+  right: 0;
   height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
-.login-container {
-  padding-left: 300px;
-  padding-right: 300px;
+.footer p {
+  margin: 0;
 }
 
 /*
@@ -127,11 +132,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .intro-image {
-  /* padding: 20px;
- background-color: var(--bg-input-focus); 
-  height: 200px;
-  width: 200px;
-  overflow: hidden;*/
+  display: flex;
+  justify-content: center;
 }
 
 .intro-image img {
@@ -149,8 +151,8 @@ input[type="number"]::-webkit-outer-spin-button {
 */
 
 .initial-container {
-  margin: 50px;
-  height: 250px;
+  margin-top: 50px;
+  /* height: 250px; */
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
   border-bottom-right-radius: 10px;
@@ -162,6 +164,7 @@ input[type="number"]::-webkit-outer-spin-button {
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .initial-header {
@@ -195,6 +198,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .initial-button {
+  margin-top: 20px;
   bottom: 20px;
   padding-left: 30px;
   padding-right: 30px;
@@ -228,11 +232,11 @@ input[type="number"]::-webkit-outer-spin-button {
   padding-left: 20px;
   padding-right: 20px;
   text-align: left;
-  border-bottom: 1px dotted rgb(219, 245, 245);
+  border-bottom: 1px dashed rgb(85, 202, 120);
 }
 
 .option:hover {
-  background-color: aqua !important;
+  background-color: var(--bg-button) !important;
 }
 
 .my-dropdown {
@@ -269,7 +273,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .result-image {
-  /* background-color: var(--bg-initial); */
+  display: flex;
+  justify-content: center;
 }
 
 .result-image img {
@@ -282,16 +287,14 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .tips {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 0 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   margin-bottom: 100px;
-  gap: 80px;
 }
 
 .tip {
   width: 250px;
-  height: 200px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 10px;
@@ -314,4 +317,32 @@ input[type="number"]::-webkit-outer-spin-button {
 .tip div {
   padding: 20px;
   text-align: left;
+}
+
+@media (max-width: 1050px) {
+  .result-upper {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .tips {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tip {
+    width: 250px;
+    height: 220px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 950px) {
+  .intro-container,
+  .initial-inputs {
+    grid-template-columns: 1fr;
+  }
+  .initial-container {
+    margin-bottom: 20px;
+  }
 }
