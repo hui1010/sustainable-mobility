@@ -137,7 +137,11 @@ export function InitialScreen() {
                 </div>
               ) : (
                 <>
-                  <p>That is in eqviallent to xx trees working xx days</p>
+                  <p>
+                    That is in eqviallent to{" "}
+                    <b> {fuelArr[fuel] * distance * 2 * 38} </b>
+                    incandescent lamps switched to LEDs
+                  </p>
                 </>
               )}
             </div>
@@ -145,7 +149,7 @@ export function InitialScreen() {
           <h1 className="result-tip-header">Do you know that?</h1>
           <div className="tips">
             <div className="tip">
-              <p>Car pooling</p>
+              <p>Car driving</p>
               <div>
                 You can save 50% of carbon emissions per person if there are two
                 people in a car.
@@ -159,11 +163,32 @@ export function InitialScreen() {
               </div>
             </div>
             <div className="tip">
-              <p>Fuel</p>
+              <p>Biking</p>
+              <div>
+                By biking you loose 0,33 calories per kg body weight per km
+              </div>
+            </div>
+            <div className="tip">
+              <p>Car driving</p>
               <div>
                 You can save up to 90% of emissions if you drive in an electric
                 car compared to a benzin car. It would be 100% if the
                 electricity came from renewable energy.
+              </div>
+            </div>
+            <div className="tip">
+              <p>Public transport</p>
+              <div>
+                You save up to 85 % of emissions by taking the bus instead of
+                the car?
+              </div>
+            </div>
+            <div className="tip">
+              <p>Biking</p>
+              <div>
+                If you included the impact of the production and maintenance of
+                a bike you would emit 21 g CO2 per km? This is still 85% less
+                than taking the car.
               </div>
             </div>
           </div>

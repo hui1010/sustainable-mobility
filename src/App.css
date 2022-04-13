@@ -289,12 +289,19 @@ input[type="number"]::-webkit-outer-spin-button {
 .tips {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  /* align-items: flex-start; */
   margin-bottom: 100px;
 }
 
 .tip {
-  width: 250px;
+  /* flex: 1; */
+  flex-basis: 15%;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  height: 200px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 10px;

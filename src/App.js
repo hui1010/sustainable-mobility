@@ -10,7 +10,7 @@ function App() {
           The final interpretation right of this event belongs to IST
           Sustainable Expert Group
         </p>
-        <p> &#128155;Ackowledge to Richard Lundby for the design support</p>
+        <p> &#129505;Ackowledge to Richard Lundby for the design support</p>
         <p>&copy; 2022 Huiyi Skårner</p>
       </div>
     </div>
