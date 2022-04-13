@@ -123,12 +123,19 @@ input[type="number"]::-webkit-outer-spin-button {
 .intro-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 40px;
 }
 
 .intro-text {
-  margin-right: 20px;
-  text-align: right;
+  /* text-align: right; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro-text p {
+  text-align: left;
+  font-size: 18px;
 }
 
 .intro-image {
@@ -137,7 +144,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .intro-image img {
-  width: 100%;
+  width: 80%;
 }
 
 /*
@@ -266,14 +273,20 @@ input[type="number"]::-webkit-outer-spin-button {
   grid-template-columns: 1fr 2fr;
   gap: 20px;
   padding: 0 100px;
+  margin-top: 20px;
 }
 
 .result-text-title {
   margin-top: 0;
 }
 
+.result-text {
+  margin: 0 auto;
+}
+
 .result-image {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -281,7 +294,30 @@ input[type="number"]::-webkit-outer-spin-button {
   width: 100%;
 }
 
-.result-tip-header {
+.link {
+  font-size: 12px;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.link a:active {
+  color: var(--bg-button);
+}
+
+.link a:visited {
+  color: unset;
+}
+
+.result-numbers h6 {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+.result-numbers .result-tip-header {
+  margin-top: 40px;
   text-align: center;
   font-size: 22px;
 }
@@ -290,8 +326,7 @@ input[type="number"]::-webkit-outer-spin-button {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  /* align-items: flex-start; */
+  justify-content: space-between;
   margin-bottom: 100px;
 }
 
