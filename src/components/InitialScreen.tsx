@@ -1,6 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, MouseEvent } from "react";
-import { fuelStatistic, FuelType, regions, fuelArr } from "../type.ts";
+import {
+  // fuelStatistic,
+  FuelType,
+  regions,
+  fuelArrType,
+  RegionType,
+  fuels,
+  getEmission,
+} from "../type.ts";
 import { faStar, faWarning } from "@fortawesome/free-solid-svg-icons";
 import "react-dropdown/style.css";
 import { MyDropDown } from "./MyDropDown.tsx";
@@ -8,14 +16,15 @@ import { PersonalInfo, Plan, Process, Town } from "../svg";
 
 export function InitialScreen() {
   const [distance, setDistance] = useState<number>(0);
-  const [region, setRegion] = useState("");
-  const [fuel, setFuel] = useState("");
+  const [region, setRegion] = useState<RegionType>("");
+  const [fuel, setFuel] = useState<FuelType>("");
   const [errorMsg, setErrorMsg] = useState("");
   const [showResult, setShowResult] = useState(false);
+  const [fuelArr, setFuelArr] = useState<fuelArrType>([]);
 
   const onShowReult = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if (!distance && !fuel && !region) {
+    if (!distance || !fuel || !region) {
       setErrorMsg("You need to fill in all fields");
       return;
     }
@@ -24,6 +33,7 @@ export function InitialScreen() {
       return;
     }
     setErrorMsg("");
+    setFuelArr(getEmission(region));
     setShowResult(!showResult);
   };
 
@@ -81,7 +91,7 @@ export function InitialScreen() {
             <div className="input">
               <label>How do you travel* </label>
               <MyDropDown
-                options={fuelStatistic.map((f: FuelType) => f.fuel)}
+                options={fuels}
                 value={fuel}
                 onChange={setFuel}
                 clickable={!showResult}
@@ -177,7 +187,7 @@ export function InitialScreen() {
               <p>Public transport</p>
               <div>
                 You can save 75% of emissions by taking the train instead of the
-                car traveling the same distance
+                car traveling the same distance.
               </div>
             </div>
             <div className="tip">
@@ -198,7 +208,7 @@ export function InitialScreen() {
               <p>Public transport</p>
               <div>
                 You save up to 85 % of emissions by taking the bus instead of
-                the car?
+                the car.
               </div>
             </div>
             <div className="tip">
