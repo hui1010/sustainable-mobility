@@ -10,7 +10,6 @@ import {
   getEmission,
 } from "../type.ts";
 import { faStar, faWarning } from "@fortawesome/free-solid-svg-icons";
-import "react-dropdown/style.css";
 import { MyDropDown } from "./MyDropDown.tsx";
 import { PersonalInfo, Plan, Process, Town } from "../svg";
 
