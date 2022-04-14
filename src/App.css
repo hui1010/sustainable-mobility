@@ -277,6 +277,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .result-text-title {
   margin-top: 0;
+  margin-bottom: 0;
+  font-size: 30px;
 }
 
 .result-text {
@@ -313,6 +315,7 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
   padding: 0;
   font-weight: normal;
+  font-style: italic;
 }
 
 .result-numbers .result-tip-header {

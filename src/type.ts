@@ -1,6 +1,6 @@
 export type RegionType = "Sweden" | "Denmark" | "Norway" | "Germany";
 export type FuelType =
-  | "Bensin"
+  | "Petrol"
   | "Diesel"
   | "Electricity"
   | "Bus"
@@ -14,7 +14,7 @@ interface FuelArrType {
 
 export const regions = ["Sweden", "Denmark", "Norway", "Germany"];
 export const fuels = [
-  "Bensin",
+  "Petrol",
   "Diesel",
   "Electricity",
   "Bus",
@@ -27,7 +27,7 @@ export const getEmission = (region: RegionType): FuelArrType => {
   switch (region) {
     case "Sweden":
       return {
-        Bensin: 181,
+        Petrol: 181,
         Diesel: 119,
         Electricity: 14,
         Bus: 27,
@@ -37,7 +37,7 @@ export const getEmission = (region: RegionType): FuelArrType => {
       };
     case "Denmark":
       return {
-        Bensin: 181,
+        Petrol: 181,
         Diesel: 119,
         Electricity: 45,
         Bus: 27,
@@ -47,7 +47,7 @@ export const getEmission = (region: RegionType): FuelArrType => {
       };
     case "Norway":
       return {
-        Bensin: 181,
+        Petrol: 181,
         Diesel: 119,
         Electricity: 14,
         Bus: 27,
@@ -57,7 +57,7 @@ export const getEmission = (region: RegionType): FuelArrType => {
       };
     case "Germany":
       return {
-        Bensin: 181,
+        Petrol: 181,
         Diesel: 119,
         Electricity: 45,
         Bus: 27,
@@ -67,7 +67,7 @@ export const getEmission = (region: RegionType): FuelArrType => {
       };
     default:
       return {
-        Bensin: 181,
+        Petrol: 181,
         Diesel: 0,
         Electricity: 45,
         Bus: 27,

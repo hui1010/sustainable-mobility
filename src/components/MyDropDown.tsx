@@ -22,7 +22,7 @@ export function MyDropDown(props: Props) {
         <p className="">{props.value}</p>
         <FontAwesomeIcon icon={faAngleDown} />
       </div>
-      {showDropdown && (
+      {showDropdown && props.clickable && (
         <div className="options">
           {props.options.map((option) => (
             <div
