@@ -332,10 +332,12 @@ input[type="number"]::-webkit-outer-spin-button {
 .tip {
   /* flex: 1; */
   flex-basis: 15%;
+  min-width: 200px;
+  max-width: 250px;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 20px;
-  height: 200px;
+  min-height: 200px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 10px;
@@ -366,8 +368,8 @@ input[type="number"]::-webkit-outer-spin-button {
     padding: 0;
   }
 
-  .tips {
-    flex-direction: column;
+  /* .tips {
+    flex-direction: row;
     align-items: center;
   }
 
@@ -375,7 +377,7 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 250px;
     height: 220px;
     margin-bottom: 20px;
-  }
+  } */
 }
 
 @media (max-width: 950px) {
