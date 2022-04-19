@@ -17,6 +17,7 @@
   /* --gray: rgb(201, 199, 199); */
   --gray: rgba(150, 148, 148, 0.23);
   --yellow: #ffdf00;
+  g: rgba(103, 110, 96, 0.23);
 }
 
 .App-link {
@@ -26,13 +27,13 @@
 }
 
 html {
-  /* background: repeating-linear-gradient(
+  background: repeating-linear-gradient(
     to right,
     var(--bg-input),
     var(--bg-input) 30px,
     var(--bg-body) 10px,
     var(--bg-body) 100px
-  ); */
+  );
   min-width: 400px;
   padding-bottom: 100px;
 }
@@ -145,6 +146,13 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .intro-image img {
   width: 80%;
+}
+
+.intro-link {
+  font-size: 12px;
+  vertical-align: top;
+  text-decoration: none;
+  padding-left: 2px;
 }
 
 /*
