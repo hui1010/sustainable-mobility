@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/sustainable-mobility/static/css/main.4ff7db39.css",
+    "main.js": "/sustainable-mobility/static/js/main.7daf7754.js",
+    "static/js/787.b99b4fd0.chunk.js": "/sustainable-mobility/static/js/787.b99b4fd0.chunk.js",
+    "static/media/undraw_town_r-6-pc.svg": "/sustainable-mobility/static/media/undraw_town_r-6-pc.88a1a057b25ca29911ea9f9b5c8f4320.svg",
+    "static/media/undraw_personal_info_re_ur1n.svg": "/sustainable-mobility/static/media/undraw_personal_info_re_ur1n.33183fa5891c9053826c1f71deaf0256.svg",
+    "static/media/undraw_process_re_gws7.svg": "/sustainable-mobility/static/media/undraw_process_re_gws7.b698f171aec3242f48c400855838f7e4.svg",
+    "static/media/undraw_business_plan_re_0v81.svg": "/sustainable-mobility/static/media/undraw_business_plan_re_0v81.b689992132d50caecbbfd684763f1526.svg",
+    "index.html": "/sustainable-mobility/index.html",
+    "main.4ff7db39.css.map": "/sustainable-mobility/static/css/main.4ff7db39.css.map",
+    "main.7daf7754.js.map": "/sustainable-mobility/static/js/main.7daf7754.js.map",
+    "787.b99b4fd0.chunk.js.map": "/sustainable-mobility/static/js/787.b99b4fd0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4ff7db39.css",
+    "static/js/main.7daf7754.js"
+  ]
+}
