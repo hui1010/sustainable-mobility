@@ -56,11 +56,6 @@ export function InitialScreen() {
               rel="noreferrer"
               className="intro-link"
             >
-              {/* <FontAwesomeIcon
-                icon={faCircleInfo}
-                color="rgb(103, 110, 96)"
-                size="xs"
-              /> */}
               1
             </a>
             . That is where we put our focus today.
