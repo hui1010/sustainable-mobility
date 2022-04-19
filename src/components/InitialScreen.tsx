@@ -169,20 +169,21 @@ export function InitialScreen() {
                     </b>{" "}
                     days
                   </p>
+                  <p className="link">
+                    *Want to know more about CO2 equivalencies? Check{" "}
+                    <a
+                      href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator#results"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      here
+                    </a>
+                  </p>
                 </div>
               )}
             </div>
           </div>
-          <p className="link">
-            *Want to know more about CO2 equivalencies? Check{" "}
-            <a
-              href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator#results"
-              target="_blank"
-              rel="noreferrer"
-            >
-              here
-            </a>
-          </p>
+
           <h1 className="result-tip-header">Do you know that?</h1>
           <div className="tips">
             <div className="tip">
