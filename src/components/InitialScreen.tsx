@@ -63,7 +63,8 @@ export function InitialScreen() {
           <p>
             Input the distance between your home and work and which type of
             fuel/vehicle you used to get to work. If you are curious, you can
-            try any other destinations.
+            try any other destinations, regions or traveling methods, remember
+            to click on the <i>Edit</i> button before making changes.
           </p>
 
           <p>
@@ -259,7 +260,7 @@ export function InitialScreen() {
             <div className="tip">
               <p>International traveling</p>
               <div>
-                If travelling internationally, going by train or boat is
+                If traveling internationally, going by train or boat is
                 lower-carbon than flying.
               </div>
             </div>
@@ -273,7 +274,7 @@ export function InitialScreen() {
             <div className="tip">
               <p>Domestical traveling</p>
               <div>
-                If travelling domestically, driving – even if it’s alone – is
+                If traveling domestically, driving – even if it’s alone – is
                 usually better than flying.
               </div>
             </div>
