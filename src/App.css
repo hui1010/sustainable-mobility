@@ -26,13 +26,13 @@
 }
 
 html {
-  background: repeating-linear-gradient(
+  /* background: repeating-linear-gradient(
     to right,
     var(--bg-input),
     var(--bg-input) 30px,
     var(--bg-body) 10px,
     var(--bg-body) 100px
-  );
+  ); */
   min-width: 400px;
   padding-bottom: 100px;
 }
